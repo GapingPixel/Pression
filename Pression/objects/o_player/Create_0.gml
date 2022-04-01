@@ -112,6 +112,26 @@ sprite[PlayerState.interact_pulley_walk, 0]	= s_player_walk;
 sprite[PlayerState.interact_pulley_walk, 1]	= 1.2;
 sprite[PlayerState.interact_pulley, 0]		= s_player_pulley;
 sprite[PlayerState.interact_pulley, 1]		= 1.0;
+sprite[PlayerState.interact_pull_lever, 0]		= s_player_pull_lever_1;
+sprite[PlayerState.interact_pull_lever, 1]		= 0;
 
 
 revolver_frame = 21;
+
+
+count_debug = 0; 
+
+revolver_hud_alpha = 0.0;
+
+
+max_stamina = 23;
+stamina = max_stamina;
+
+
+stamina_hud_alpha = 0;
+
+pull_lever_button_count = 0;
+button_hud_frame = 0;
+
+button_hud_alpha = 0;
+

@@ -3,6 +3,7 @@
   "glyphOperations": 0,
   "interpreter": 0,
   "pointRounding": 0,
+  "applyKerning": 0,
   "fontName": "Ykar",
   "styleName": "Regular",
   "size": 36.0,
@@ -20,6 +21,7 @@
     "path": "texturegroups/Default",
   },
   "ascenderOffset": 4,
+  "ascender": 0,
   "glyphs": {
     "32": {"x":2,"y":2,"w":25,"h":49,"character":32,"shift":25,"offset":0,},
     "33": {"x":267,"y":155,"w":7,"h":49,"character":33,"shift":29,"offset":11,},

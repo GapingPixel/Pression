@@ -3,9 +3,9 @@
 if(begin_game)
 {
 	x += 80;
-	if(x >= o_player.x)
+	if(x >=  o_boat.x)
 	{
-		cam.target = o_player;
+		cam.target = o_boat;
 		instance_destroy();
 	}
 }

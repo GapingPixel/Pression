@@ -52,7 +52,8 @@ function define_enums() {
 		interact_pulley_align,
 		interact_pulley_turn,
 		interact_pulley_walk,
-		interact_pulley
+		interact_pulley,
+		interact_pull_lever
 	}
 
 	//switches and pulleys
@@ -69,3 +70,4 @@ function define_enums() {
 
 
 }
+

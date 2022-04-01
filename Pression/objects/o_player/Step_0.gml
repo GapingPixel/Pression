@@ -92,6 +92,16 @@ switch(state)
 			if(switch_id != noone)
 			{
 				o_game.switch_id[switch_id.ident] = !o_game.switch_id[switch_id.ident];
+			} 
+			
+			if instance_exists(o_lever) {
+				if place_meeting(x,y,o_lever) && !o_lever.lever_used {
+					state = PlayerState.interact_pull_lever;
+					sprite_index = s_player_pull_lever_1;
+					image_speed = 0;
+					user_input[UserInput.action1] = false;
+					o_lever.lever_used = true;
+				}
 			}
 		}
 		else if(user_input[UserInput.action1]) //pressing and holding action
@@ -100,9 +110,21 @@ switch(state)
 			if(pulley_id != noone)
 			{
 				state = PlayerState.interact_pulley_align;
-			}
+			} 
 		}
 	break;
+	 
+	case PlayerState.interact_pull_lever:
+	x = 2480; 
+	if (user_input[UserInput.action0] && sprite_index == s_player_pull_lever_1) {
+		//sprite[PlayerState.interact_pull_lever, 1]	= 0.2;
+		//pull_lever_button_count++;
+		image_speed +=0.08;
+		image_speed = clamp(image_speed,0,0.6);
+		
+	}
+	break;
+	
 	case PlayerState.normal_walk:
 		if(!grounded)
 		{
@@ -129,7 +151,7 @@ switch(state)
 		{
 			state = PlayerState.normal_turn;
 		}
-		else if(user_input[UserInput.run])
+		else if(user_input[UserInput.run] && stamina >= max_stamina)
 		{
 			state = PlayerState.normal_run;
 		}
@@ -543,6 +565,33 @@ switch(state)
 		}
 	break;
 	case PlayerState.combat_aim_gun:
+	switch ammo {
+					 
+		case 6:
+		revolver_frame = 21;
+		break;
+					 
+		case 5:
+		revolver_frame = 17;
+		break;
+					 
+		case 4:
+		revolver_frame = 13;
+		break;
+					 
+		case 3:
+		revolver_frame = 9;
+		break;
+					 
+		case 2:
+		revolver_frame = 5;
+		break;
+					 
+		case 1:
+		revolver_frame = 1;
+		break;
+	}
+	
 		if(!user_input[UserInput.aim])
 		{
 			state = PlayerState.combat_holster_gun;
@@ -587,6 +636,32 @@ switch(state)
 			if(round(image_index) == 8)
 			{
 				image_index = 3;
+				switch ammo {
+					 
+					 case 6:
+					 revolver_frame = 21;
+					 break;
+					 
+					 case 5:
+					 revolver_frame = 17;
+					 break;
+					 
+					 case 4:
+					 revolver_frame = 13;
+					 break;
+					 
+					 case 3:
+					 revolver_frame = 9;
+					 break;
+					 
+					 case 2:
+					 revolver_frame = 5;
+					 break;
+					 
+					 case 1:
+					 revolver_frame = 1;
+					 break;
+				}
 				ammo++;
 			}
 		}
@@ -784,7 +859,7 @@ switch(state)
 //set sprite
 
 
-if(sprite_index != sprite[state, 0])
+if(sprite_index != sprite[state, 0] && state != PlayerState.interact_pull_lever)
 {
 	sprite_index = sprite[state, 0];
 	image_speed  = sprite[state, 1];
@@ -901,6 +976,7 @@ switch(state)
 	case PlayerState.normal_run:
 		velocity[0] = speed_run * facing;
 		velocity[1] = 0;
+		
 	break;
 	case PlayerState.normal_stumble:
 		velocity[1] = 0;
@@ -1222,3 +1298,28 @@ switch(state)
 }
 
 move_collision(velocity, o_mask_solid);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

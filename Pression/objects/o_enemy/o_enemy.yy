@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "s_player_stand",
-    "path": "sprites/s_player_stand/s_player_stand.yy",
+    "name": "_01_idle_red",
+    "path": "sprites/_01_idle_red/_01_idle_red.yy",
   },
   "solid": false,
   "visible": true,
