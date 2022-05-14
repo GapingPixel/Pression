@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_harbor_waves",
-  "duration": 38.0096474,
+  "duration": 38.009647,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
