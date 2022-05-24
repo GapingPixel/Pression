@@ -1,9 +1,4 @@
 {
-  "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
-  },
-  "name": "TileSet1",
   "spriteId": {
     "name": "TG_Project_Pression_Re_Do_Assets",
     "path": "sprites/TG_Project_Pression_Re_Do_Assets/TG_Project_Pression_Re_Do_Assets.yy",
@@ -14,9 +9,13 @@
   "tileyoff": 12,
   "tilehsep": 0,
   "tilevsep": 0,
+  "spriteNoExport": true,
+  "textureGroupId": {
+    "name": "Default",
+    "path": "texturegroups/Default",
+  },
   "out_tilehborder": 0,
   "out_tilevborder": 0,
-  "spriteNoExport": true,
   "out_columns": 27,
   "tile_count": 754,
   "autoTileSets": [],
@@ -791,6 +790,7 @@
     "path": "folders/Tile Sets.yy",
   },
   "resourceVersion": "1.0",
+  "name": "TileSet1",
   "tags": [],
   "resourceType": "GMTileSet",
 }
